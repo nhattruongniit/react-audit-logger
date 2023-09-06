@@ -1,7 +1,7 @@
 import auditLogger from "./libs/AuditLogger";
 import ReactGA from "react-ga";
 
-ReactGA.initialize("G-FSCD4PR3L6");
+ReactGA.initialize(import.meta.env.VITE_APP_GA_TRACKING_ID);
 
 window.auditLogger = auditLogger.createLogger();
 
