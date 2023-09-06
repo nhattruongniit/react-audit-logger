@@ -1,12 +1,16 @@
+import React from "react";
 import auditLogger from "./libs/AuditLogger";
 import ReactGA from "react-ga";
-
-ReactGA.initialize(import.meta.env.VITE_APP_GA_TRACKING_ID);
 
 window.auditLogger = auditLogger.createLogger();
 
 function App() {
   console.log(window.auditLogger);
+
+  React.useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
+
   return (
     <>
       <button
@@ -15,7 +19,10 @@ function App() {
           ReactGA.event({
             category: "User",
             action: "Created an Account",
+            label: "label",
+            value: "test",
           });
+          console.log("clicked Add new");
         }}
       >
         Add new
