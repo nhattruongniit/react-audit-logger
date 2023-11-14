@@ -1,6 +1,6 @@
 import React from "react";
 import auditLogger from "./libs/AuditLogger";
-// import ReactGA from "react-ga";
+import ReactGA from "react-ga";
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 
