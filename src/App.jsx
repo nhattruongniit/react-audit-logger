@@ -4,6 +4,8 @@ import ReactGA from "react-ga";
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 
+import { Piano } from "@ama-ecosystem/theme";
+
 window.auditLogger = auditLogger.createLogger();
 
 const firebaseConfig = {
@@ -29,16 +31,17 @@ function App() {
 
   return (
     <>
+      <Piano />
       <button
         type="button"
         onClick={() => {
-          ReactGA.event({
-            category: "test REACTGA Add new",
-            action: "Add new account",
-            label: "button Add new",
-            value: "test REACTGA Add new",
-          });
-          logEvent(analytics, `Add new ${Date.now()}`, {
+          // ReactGA.event({
+          //   category: "test REACTGA Add new",
+          //   action: "Add new account",
+          //   label: "button Add new",
+          //   value: "test REACTGA Add new",
+          // });
+          logEvent(analytics, `Add new tony 09-Sep`, {
             content_type: "button",
             content_id: "P12453",
           });
@@ -50,21 +53,16 @@ function App() {
       <button
         type="button"
         onClick={() => {
-          ReactGA.event({
-            category: "test REACTGA Submit",
-            action: "Submit account",
-            label: "button submit",
-            value: "test REACTGA Submit",
+          // ReactGA.event({
+          //   category: "test REACTGA Submit",
+          //   action: "Submit account",
+          //   label: "button submit",
+          //   value: "test REACTGA Submit",
+          // });
+          logEvent(analytics, `Submit form tony`, {
+            generate_lead: "test logEvent Submit",
           });
-          logEvent(analytics, `Submit form`, {
-            content_type: "button submit",
-            content_id: "submit form",
-            payload: {
-              user: "tony",
-              email: "tony@gmail.com",
-            },
-          });
-          console.log("clicked Add new");
+          console.log("button submit");
         }}
       >
         Submit
